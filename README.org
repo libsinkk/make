@@ -1,0 +1,35 @@
+#+TITLE:      સ્વવાચિકા
+#+AUTHOR:     કૌસ્તુભ 𑘦𑘰𑘩𑘝𑘲 𑀤𑀺𑀮𑀻𑀧
+#+EMAIL:      381p4ojwe@mozmail.com
+#+LANGUAGE:   eng
+#+OPTIONS:    H:3 num:nil toc:f \n:nil ::t |:t ^:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:    align fold nodlcheck hidestars oddeven lognotestate entitiespretty
+#+CATEGORY:   readme
+
+* make-container
+Make Linux Container Image based on various gnu/linux distributions
+
+** Domain
+This image is created for running make targets in container
+environments.
+
+Currently supported GNU/Linux distributions are:
+- fedora
+- debian
+- alpine
+
+** Engineering
+
+*** Prerequisites
+- podman
+- docker
+
+*** Building the container image
+#+begin_src bash
+  BUILDER=docker make all
+#+end_src
+
+*** Pushing the image to docker container repository
+#+begin_src bash
+  BUILDER=docker make install
+#+end_src
