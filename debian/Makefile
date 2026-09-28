@@ -1,7 +1,7 @@
 .DEFAULT_GOAL=help
 
 pwdname := $(shell basename `pwd`)
-imagename := "ksinkar/make:debian12"
+imagename := "ksinkar/make:debian13"
 
 BUILDER ?= podman
 
