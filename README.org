@@ -33,3 +33,10 @@ Currently supported GNU/Linux distributions are:
 #+begin_src bash
   BUILDER=docker make install
 #+end_src
+
+*** Incrementing the versions
+#+begin_src bash
+  make increment-fedora-version
+  make increment-debian-version
+  make increment-alpine-version
+#+end_src
