@@ -15,6 +15,11 @@ ifndef $(OS)
 	OS := $(shell uname -s)
 endif
 
+configure:
+	git config core.hooksPath .githooks
+	command -v glab
+	command -v gh
+	command -v perl
 
 help:             ## show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
@@ -39,3 +44,7 @@ increment-debian-version:  ## Increment the fedora version
 increment-alpine-version:  ## Increment the fedora version
 	perl -pi -e 's/(alpine)(\d+)/$$1.($$2+1)/ge' alpine/Makefile .gitlab-ci.yml
 	perl -pi -e 's/(alpine\:)(\d+)/$$1.($$2+1)/ge' alpine/Containerfile
+
+check:
+	glab ci lint
+	gh actionlint
