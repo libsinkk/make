@@ -1,12 +1,12 @@
 #
-name: Create an Alpine container image and publish to ghcr
+name: Create a Debian container image and publish to ghcr
 
 # Configures this workflow to run every time a tag is pushed
 
 on:
   push:
     tags:             # Pattern matched against refs/tags
-    - 'alpine*'           # Push events to every tag not containing /
+    - 'debian*'           # Push events to every tag not containing /
   workflow_dispatch:
 
 # Defines two custom environment variables for the workflow. These are
@@ -37,12 +37,18 @@ jobs:
         # Container registry registry using the account and password
         # that will publish the packages. Once published, the packages
         # are scoped to the account defined here.
-      - name: Log in to the Container registry
+      - name: Log in to the GitHub Container Registry
         uses: docker/login-action@v4
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v4
+        with:
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v4
@@ -76,7 +82,8 @@ jobs:
         id: push
         uses: docker/build-push-action@v7
         with:
-          context: "{{defaultContext}}:alpine"
+          platforms: linux/amd64,linux/arm64
+          context: "{{defaultContext}}:debian"
           file: ./Containerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
