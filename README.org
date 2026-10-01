@@ -8,8 +8,7 @@
 
 * make-container
 Make Linux Container Image based on various gnu/linux distributions
-
-** Domain
+** 𑘪𑘱𑘬𑘧𑘎𑘿𑘬𑘹𑘝𑘿𑘨 | Subject Domain | વિષયક્ષેત્ર
 This image is created for running make targets in container
 environments.
 
@@ -18,8 +17,7 @@ Currently supported GNU/Linux distributions are:
 - debian
 - alpine
 
-** Engineering
-
+** 𑘀𑘥𑘱𑘧𑘰𑘽𑘝𑘿𑘨𑘱𑘎𑘲 | Engineering | અભિયાન્ત્રિકી
 *** Prerequisites
 - podman
 - docker
@@ -40,3 +38,9 @@ Currently supported GNU/Linux distributions are:
   make increment-debian-version
   make increment-alpine-version
 #+end_src
+
+** 𑘧𑘻𑘕𑘡𑘰 | Planning | યોજના |
+*** TODO parameterize debian, fedora and alpine to a reusable workflow
+- https://docs.docker.com/build/ci/github-actions/multi-platform/#distribute-build-across-multiple-runners
+- https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows#example-caller-workflow
+** 𑘫𑘤𑘿𑘟𑘭𑘳𑘓𑘱 | Glossary   | શબ્દસુચિ
