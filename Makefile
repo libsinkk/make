@@ -47,4 +47,4 @@ increment-alpine-version:  ## Increment the fedora version
 
 check:
 	glab ci lint
-	gh actionlint
+	gh actions-lint
