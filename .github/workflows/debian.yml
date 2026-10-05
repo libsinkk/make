@@ -68,7 +68,7 @@ jobs:
         with:
           images: |
             name=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}, enable=true
-            name=${{ env.DOCKERHUB_USERNAME}}/${{ github.event.repository.name }}, enable=true
+            name=${{ vars.DOCKERHUB_USERNAME}}/${{ github.event.repository.name }}, enable=true
       # This step uses the `docker/build-push-action` action to build
       # the image, based on your repository's `Dockerfile`. If the
       # build succeeds, it pushes the image to GitHub Packages.
