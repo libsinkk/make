@@ -40,7 +40,8 @@ Currently supported GNU/Linux distributions are:
 #+end_src
 
 ** 𑘧𑘻𑘕𑘡𑘰 | Planning | યોજના |
-*** TODO parameterize debian, fedora and alpine to a reusable workflow
+*** DONE parameterize debian, fedora and alpine to a reusable workflow
+CLOSED: [2026-10-05 Mon 19:46]
 - https://docs.docker.com/build/ci/github-actions/multi-platform/#distribute-build-across-multiple-runners
 - https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows#example-caller-workflow
 ** 𑘫𑘤𑘿𑘟𑘭𑘳𑘓𑘱 | Glossary   | શબ્દસુચિ
